@@ -1,8 +1,8 @@
 import "./App.css";
-import ProductsPage from "./pages/ProductsPage/ProductsPage";
-import ProductPage from "./pages/ProductPage/ProductPage";
-import ProductsLayout from "./components/ProductsLayout/ProductsLayout";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import ProductsPage from "./pages/ProductsPage";
+import ProductPage from "./pages/ProductPage";
+import ProductsLayout from "./components/ProductsLayout";
+import NotFoundPage from "./pages/NotFoundPage";
 import { Link, Route, Routes } from "react-router-dom";
 
 function App() {

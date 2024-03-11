@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./index.module.css";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import Product from "../../components/Product";
+import ProductsDisplay from "../../components/ProductsDisplay";
 import { useSearchParams } from "react-router-dom";
 
 const ProductsPage = () => {
@@ -22,8 +22,8 @@ const ProductsPage = () => {
   const fetchCategories = () => {
     fetch("https://fakestoreapi.com/products/categories")
       .then((res) => res.json())
-      .then((data) => {
-        setCategories(data);
+      .then((json) => {
+        setCategories(json);
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
@@ -32,8 +32,8 @@ const ProductsPage = () => {
   const fetchProducts = () => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
+      .then((json) => {
+        setProducts(json);
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
@@ -62,26 +62,11 @@ const ProductsPage = () => {
               </Select>
             </FormControl>
           </div>
-          <div className={classes.products}>
-            {products
-              .filter((product) => {
-                const titleMatches = product.title
-                  .toLowerCase()
-                  .includes(searchTerm.toLowerCase());
-                const categoryMatches = selectedCategory
-                  ? product.category === selectedCategory
-                  : true;
-                return titleMatches && categoryMatches;
-              })
-              .map((product) => (
-                <Product
-                  title={product.title}
-                  image={product.image}
-                  key={product.id}
-                  id={product.id}
-                />
-              ))}
-          </div>
+          <ProductsDisplay
+            products={products}
+            searchTerm={searchTerm}
+            selectedCategory={selectedCategory}
+          />
         </>
       )}
     </div>

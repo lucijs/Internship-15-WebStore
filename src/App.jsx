@@ -1,30 +1,20 @@
 import "./App.css";
 import ProductsPage from "./pages/ProductsPage";
 import ProductPage from "./pages/ProductPage";
-import ProductsLayout from "./components/ProductsLayout";
 import NotFoundPage from "./pages/NotFoundPage";
 import { Link, Route, Routes } from "react-router-dom";
+import MainPage from "./pages/MainPage/MainPage";
 
 function App() {
   return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/products">Proizvodi</Link>
-          </li>
-          <li>
-            <Link to="/">Nav</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="background">
       <Routes>
-        <Route path="/" element={<ProductsLayout />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

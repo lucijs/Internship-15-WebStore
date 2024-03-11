@@ -4,7 +4,6 @@ import ProductPage from "./pages/ProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { Route, Routes } from "react-router-dom";
 import ProductsLayout from "./components/ProductsLayout";
-import { useEffect, useMemo, useRef, useState } from "react";
 
 function App() {
   return (

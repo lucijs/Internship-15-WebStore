@@ -1,5 +1,7 @@
+import classes from "./index.module.css";
+
 const ProductsPage = () => {
-  return <>Products</>;
+  return <div>products</div>;
 };
 
 export default ProductsPage;

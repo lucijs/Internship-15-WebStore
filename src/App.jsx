@@ -3,17 +3,18 @@ import ProductsPage from "./pages/ProductsPage";
 import ProductPage from "./pages/ProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { Route, Routes } from "react-router-dom";
-import MainPage from "./pages/MainPage";
 import ProductsLayout from "./components/ProductsLayout";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 function App() {
   return (
     <div className="background">
-      <ProductsLayout />
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/products/:id" element={<ProductPage />} />
+        <Route path="/" element={<ProductsLayout />} />
+        <Route path="/products" element={<ProductsLayout />}>
+          <Route index element={<ProductsPage />} />
+          <Route path=":id" element={<ProductPage />} />
+        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>

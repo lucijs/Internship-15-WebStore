@@ -1,0 +1,9 @@
+.productsContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  background-color: white;
+  height: 100px;
+}

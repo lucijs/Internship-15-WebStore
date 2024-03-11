@@ -2,12 +2,14 @@ import "./App.css";
 import ProductsPage from "./pages/ProductsPage";
 import ProductPage from "./pages/ProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import { Link, Route, Routes } from "react-router-dom";
-import MainPage from "./pages/MainPage/MainPage";
+import { Route, Routes } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import ProductsLayout from "./components/ProductsLayout";
 
 function App() {
   return (
     <div className="background">
+      <ProductsLayout />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/products" element={<ProductsPage />} />

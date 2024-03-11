@@ -1,12 +1,5 @@
-import ProductsLayout from "../../components/ProductsLayout/ProductsLayout";
-
 const ProductsPage = () => {
-  return (
-    <>
-      <ProductsLayout />
-      Products
-    </>
-  );
+  return <>Products</>;
 };
 
 export default ProductsPage;

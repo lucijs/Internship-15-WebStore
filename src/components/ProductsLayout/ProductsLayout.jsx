@@ -1,16 +1,10 @@
-import { Button, TextField, makeStyles } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import classes from "./index.module.css";
 import logo from "../../assets/logo.png";
 
 const ProductsLayout = () => {
   const [searchInput, setSearchInput] = useState("");
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/categories")
-      .then((res) => res.json())
-      .then((json) => console.log(json));
-  });
 
   return (
     <>
@@ -27,7 +21,7 @@ const ProductsLayout = () => {
             color="warning"
             required
           />
-          <Button variant="contained">Submit</Button>
+          <Button variant="contained">Pretraži</Button>
         </form>
       </div>
       <p>{searchInput}</p>

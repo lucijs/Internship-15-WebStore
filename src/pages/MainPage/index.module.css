@@ -1,0 +1,20 @@
+.categories {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  background-color: white;
+  margin-top: -15px;
+  height: 100px;
+}
+
+.categories button {
+  height: 40px;
+  background-color: rgba(253, 205, 0, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.categories button:hover {
+  background-color: #fdcd00;
+}
